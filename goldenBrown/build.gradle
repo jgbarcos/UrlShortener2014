@@ -18,3 +18,10 @@ dependencies {
    compile 'org.springframework:spring-test:4.1.4.RELEASE'
    testCompile 'junit:junit:4.10'
 }
+
+// Used for @DirtiesContext problem
+test{
+	scanForTestClasses = false
+	// This should get only "ApplicationTests.class" and "SameApplicationTests.class"
+    include "**/*ApplicationTests.class"
+}
